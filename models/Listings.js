@@ -8,9 +8,6 @@ const listingSchema=new Schema({
     image:{
         type:String,
         default:"https://source.unsplash.com/1600x900/?nature,water",
-        get:(v)=>{
-            v===""?"https://source.unsplash.com/1600x900/?nature,water":v;
-        }
     },
     price:Number,
     location:String,

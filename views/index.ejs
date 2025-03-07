@@ -3,16 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Listings</title>
+    <title>All Listings | WanderLust</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-900">
 
-    <h2>All Listings</h2>
-    <ul>
-        <% for(let list of listings) { %>
-            <li><a href="/listings/<%= list._id %>"><%= list.title %></a></li> 
-        <% } %>
-    </ul>
+    <div class="container mx-auto p-6">
+        <h2 class="text-3xl font-bold text-center text-indigo-600 mb-6">All Listings</h2>
+
+        <!-- Grid Layout for Listings -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <% for(let list of listings) { %>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="<%= list.image %>" alt="<%= list.title %>" class="w-full h-48 object-cover">
+
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">
+                            <a href="/listings/<%= list._id %>" class="text-indigo-600 hover:text-indigo-800 transition duration-300">
+                                <%= list.title %>
+                            </a>
+                        </h3>
+                        <p class="text-gray-600"><%= list.location %>, <%= list.country %></p>
+                        <p class="text-indigo-500 font-bold">$<%= list.price %></p>
+
+                        <a href="/listings/<%= list._id %>" 
+                           class="block text-center bg-indigo-600 text-white mt-4 p-2 rounded hover:bg-indigo-700 transition duration-300">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+
+        <!-- Create New Listing Button -->
+        <div class="text-center mt-8">
+            <form action="/listings/new" method="get">
+                <button type="submit" 
+                        class="bg-green-600 text-white px-6 py-2 rounded-lg text-lg font-semibold hover:bg-green-700 transition duration-300">
+                    + Create New Listing
+                </button>
+            </form>
+        </div>
+    </div>
 
 </body>
 </html>

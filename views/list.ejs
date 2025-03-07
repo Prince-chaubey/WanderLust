@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLust - listings Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <div class="container mx-auto p-6">
+        <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
+            <h3 class="text-3xl font-bold text-center text-indigo-600 mb-6"><%= listings.title %></h3>
+
+            <div class="text-center">
+                <!-- Display Image -->
+                <img src="<%= listings.image %>" alt="<%= listings.title %>" 
+                     class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+            </div>
+
+            <div class="space-y-4">
+                <p class="text-lg"><span class="font-semibold">Description:</span> <%= listings.description %></p>
+                <p class="text-lg"><span class="font-semibold">Location:</span> <%= listings.location %></p>
+                <p class="text-lg"><span class="font-semibold">Price: &#x20b9;</span> 
+                    <%= listings.price ? listings.price.toLocaleString("en-IN") : "N/A" %>
+                </p>
+                <p class="text-lg"><span class="font-semibold">Country:</span> <%= listings.country %></p>
+            </div>
+
+            <div class="text-center mt-6">
+                <a href="/listingss" class="text-white bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700">Back to listingss</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
