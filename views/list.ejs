@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WanderLust - Listing Details</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<% layout("/layouts/boilerplate.ejs")%>
 <body class="bg-gray-100 text-gray-900">
 
     <div class="container mx-auto p-6">
@@ -37,14 +30,14 @@
                    class="w-full sm:w-auto text-center bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition duration-300">
                     Back to Listings
                 </a>
-                <a href="/listings/<%= listings._id %>/edit" 
-                   class="w-full sm:w-auto text-center bg-yellow-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-yellow-600 transition duration-300">
-                    Edit Listing
-                </a>
+                <form action="/listings/<%=listings._id%>/edit" method="get">
+                      <button class="w-full sm:w-auto text-center bg-yellow-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-yellow-600 transition duration-300" >
+                        Edit
+                      </button>">
+                </form>
                 
             </div>
         </div>
     </div>
 
 </body>
-</html>

@@ -67,3 +67,23 @@ app.delete("/listings/:id",async(req,res)=>{
     await Listing.findByIdAndDelete(id);
     res.redirect("/listings");
 })
+app.put("/listings/:id",async(req,res)=>{
+    try {
+        let id = req.params.id;
+        let { title, description, image, price, location, country } = req.body;
+
+        // Update in MongoDB
+        await Listing.findByIdAndUpdate(id, { title, description, image, price, location, country });
+
+        res.redirect(`/listings/${id}`); // Redirect to updated listing
+    } catch (error) {
+        console.error("Error updating listing:", error);
+        res.status(500).send("Error updating listing");
+    }
+})
+
+app.get('/listings/:id/edit', async (req, res) => {
+    const listing = await Listing.findById(req.params.id);
+    res.render('edit.ejs', { listing });
+});
+
