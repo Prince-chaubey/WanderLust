@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Listing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen py-10">
+
+    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md py-2">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Create a New Listing</h2>
+        
+        <form action="/listings/new" method="POST">
+            
+            <!-- Title -->
+            <div class="mb-4">
+                <label for="title" class="block text-gray-700 font-medium">Title</label>
+                <input type="text" name="title" id="title" placeholder="Enter title"
+                    class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <!-- Description -->
+            <div class="mb-4">
+                <label for="description" class="block text-gray-700 font-medium">Description</label>
+                <textarea name="description" id="description" rows="3" placeholder="Enter description"
+                    class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+
+            <!-- Image URL -->
+            <div class="mb-4">
+                <label for="image" class="block text-gray-700 font-medium">Image URL</label>
+                <input type="text" name="image" id="image" placeholder="Enter image URL"
+                    class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+                        <!-- Price -->
+                        <div class="mb-4">
+                            <label for="price" class="block text-gray-700 font-medium">Price ($)</label>
+                            <input type="number" name="price" id="price" placeholder="Enter price"
+                                class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+            <!-- Location -->
+            <div class="mb-4">
+                <label for="location" class="block text-gray-700 font-medium">Location</label>
+                <input type="text" name="location" id="location" placeholder="Enter location"
+                    class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <!-- Country -->
+            <div class="mb-4">
+                <label for="country" class="block text-gray-700 font-medium">Country</label>
+                <input type="text" name="country" id="country" placeholder="Enter country"
+                    class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+
+            <!-- Submit Button -->
+            <button type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition">
+                Submit Listing
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>
