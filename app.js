@@ -35,7 +35,13 @@ app.get("/",(req,res)=>{
 //Index Route
 app.get("/listings",async(req,res)=>{
    const allListings=await Listing.find({});
-   res.render("index.ejs",{allListings});
+   res.render("allListings.ejs",{allListings});
+})
+
+app.delete("/listings/:id",async(req,res)=>{
+    const id=req.params.id;
+    await Listing.findByIdAndDelete(id);
+    res.redirect("/listings");
 })
 
 //Rooute to edit the Listings
