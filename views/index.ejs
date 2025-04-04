@@ -34,7 +34,11 @@
             <h1 class="text-4xl font-bold text-gray-800 mb-2">Explore WanderLust</h1>
             <p class="text-lg text-gray-600">Discover your perfect getaway</p>
         </div>
-        
+        <form action="/listings/new" method="get" class="text-center mb-5">
+            <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition">
+                Create New
+            </button>
+        </form>
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
             <% for(const list of allListings) { %>
                 <div class="listing-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
@@ -44,7 +48,7 @@
                             <%= list.location %>, <%= list.country %>
                         </span>
                         <span class="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            $<%= list.price %><span class="price-tag"></span>
+                            $<%= list.price %>
                         </span>
                     </div>
                     <div class="p-5">
@@ -56,9 +60,9 @@
                                     View Details
                                 </button>
                             </form>
-                            <form action="/listings/new" method="get">
+                            <form action="/listings/<%=list.id %>/edit" method="get">
                                 <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition">
-                                    Create New
+                                    Edit
                                 </button>
                             </form>
 
@@ -67,6 +71,7 @@
                 </div>
             <% } %>
         </div>
+       
     </div>
 
 </body>
