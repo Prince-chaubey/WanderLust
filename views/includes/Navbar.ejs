@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airbnb Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@heroicons/react/24/outline/index.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <nav class="flex items-center justify-between px-6 py-4 border-b shadow-sm">
+    <!-- Left Section -->
+    <div class="flex items-center gap-2">
+       <p class="h-8"> 
+        <i class="fa-solid fa-compass text-4xl"></i>
+       </p>
+      
+    </div>
+
+    <!-- Center Section -->
+    <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-600">
+      <a href="#" class="text-black">Stays</a>
+      <a href="#">Experiences</a>
+    </div>
+
+    <!-- Right Section -->
+    <div class="flex items-center gap-4">
+      <a href="#" class="text-sm font-medium text-gray-700 hover:underline">Airbnb your home</a>
+      <!-- Globe Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z" />
+      </svg>
+      <!-- Profile Dropdown -->
+      <div class="flex items-center gap-2 px-3 py-1.5 border rounded-full hover:shadow-md transition cursor-pointer">
+        <!-- Menu icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- User icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
+        </svg>
+      </div>
+    </div>
+  </nav>
+</body>
+</html>

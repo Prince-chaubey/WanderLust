@@ -4,6 +4,7 @@ const mongoose=require("mongoose");
 const Listing=require("./Models/Listing.js");
 const path=require("path");
 const methodOverride = require('method-override');
+const ejsMate=require("ejs-mate");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -11,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname,"public")));
 app.use(methodOverride('_method'));
+app.engine("ejs",ejsMate);
 
 
 const port=8080;
@@ -70,7 +72,7 @@ app.get("/listings/new",(req,res)=>{
 })
 
 //saving the route
-app.post(("/listings/new"),async(req,res)=>{
+app.post("/listings/new",async(req,res)=>{
     let {title,description,image,price,location,country}=req.body;
       
     await Listing.create({ title, description, image, price, location, country });
