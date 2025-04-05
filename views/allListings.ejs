@@ -7,7 +7,7 @@
             <h1 class="text-4xl font-bold text-gray-800 mb-2">Explore WanderLust</h1>
             <p class="text-lg text-gray-600">Discover your perfect getaway</p>
         </div>
-        
+
         <form action="/listings/new" method="get" class="text-center mb-5">
             <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition">
                 Create New
@@ -30,7 +30,7 @@
                     <div class="p-5">
                         <h2 class="text-xl font-semibold text-gray-800 mb-2"><%= list.title %></h2>
                         <p class="text-gray-600 line-clamp-2 mb-4"><%= list.description %></p>
-                        <div class="flex gap-3 flex-wrap">
+                        <div class="flex gap-3 flex-wrap justify-between">
                             <form action="/listings/<%=list.id %>" method="get">
                                 <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition">
                                     View Details
