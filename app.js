@@ -34,6 +34,19 @@ app.get("/",(req,res)=>{
     res.send("Hey I am root");
 })
 
+app.use("/api",(req,res,next)=>{
+    let {token}=req.query;
+    if(token==="GiveACCESS"){
+        return next();
+    }
+    res.send("Access Denied");
+})
+
+
+app.get("/api",(req,res)=>{
+    res.send("Access granted to API");
+})
+
 //Index Route
 app.get("/listings",async(req,res)=>{
    const allListings=await Listing.find({});
